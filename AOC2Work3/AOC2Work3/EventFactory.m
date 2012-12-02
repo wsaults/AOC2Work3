@@ -10,8 +10,8 @@
 
 @implementation EventFactory
 
-+(BaseEvent *)createNewEventWithType:(NSInteger)type {
-    return [StandardEvent new];
++(BaseEvent *)createNewEventWithTitle:(NSString *)title date:(NSDate *)date description:(NSString *)description {
+    return [[StandardEvent alloc] initWithTitle:title date:date description:description];
 }
 
 @end

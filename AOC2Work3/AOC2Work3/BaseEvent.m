@@ -10,10 +10,12 @@
 
 @implementation BaseEvent
 
--(id)init {
+-(id)initWithTitle:(NSString *)title date:(NSDate *)date description:(NSString *)description {
     self = [super init];
     if (self != nil) {
-        // Custom initilization.
+        _eventTitle = title;
+        _eventDate = date;
+        _eventDescription = description;
     }
     return self;
 }

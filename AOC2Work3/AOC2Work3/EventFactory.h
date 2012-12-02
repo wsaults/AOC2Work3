@@ -12,6 +12,6 @@
 
 @interface EventFactory : NSObject
 
-+(BaseEvent *)createNewEventWithType:(NSInteger)type;
++(BaseEvent *)createNewEventWithTitle:(NSString *)title date:(NSDate *)date description:(NSString *)description;
 
 @end

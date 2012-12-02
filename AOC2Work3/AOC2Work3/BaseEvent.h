@@ -10,4 +10,10 @@
 
 @interface BaseEvent : NSObject
 
+@property (nonatomic, strong) NSString *eventTitle;
+@property (nonatomic, strong) NSDate *eventDate;
+@property (nonatomic, strong) NSString *eventDescription;
+
+-(id)initWithTitle:(NSString *)title date:(NSDate *)date description:(NSString *)description;
+
 @end
