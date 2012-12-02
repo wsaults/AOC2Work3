@@ -57,9 +57,80 @@
                     <view key="view" contentMode="scaleToFill" id="od3-f1-Lhh">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="XRV-4a-dkd">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="uQB-PP-OhI"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="376184429.45214498">
+                                    <!--2012-12-02 23:40:29 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <mutableData key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</mutableData>
+                                </timeZone>
+                            </datePicker>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5C-Y1-oxx">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gAG-AM-WeS">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c1b-gf-Jnx">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAd-Su-PDC">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="X5C-Y1-oxx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="31j-2c-icz"/>
+                            <constraint firstAttribute="trailing" secondItem="SAd-Su-PDC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7PN-26-N5c"/>
+                            <constraint firstItem="X5C-Y1-oxx" firstAttribute="top" secondItem="od3-f1-Lhh" secondAttribute="top" constant="20" symbolic="YES" type="default" id="8YT-nJ-mAU"/>
+                            <constraint firstItem="XRV-4a-dkd" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" type="default" id="AFV-Xk-3eE"/>
+                            <constraint firstAttribute="trailing" secondItem="c1b-gf-Jnx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="G9p-A1-fzg"/>
+                            <constraint firstAttribute="trailing" secondItem="gAG-AM-WeS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IUE-XU-zpT"/>
+                            <constraint firstItem="X5C-Y1-oxx" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="J5x-Qk-dMQ"/>
+                            <constraint firstItem="c1b-gf-Jnx" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mxm-bd-DPg"/>
+                            <constraint firstItem="c1b-gf-Jnx" firstAttribute="top" secondItem="SAd-Su-PDC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ZW2-2o-Fn2"/>
+                            <constraint firstItem="XRV-4a-dkd" firstAttribute="trailing" secondItem="od3-f1-Lhh" secondAttribute="trailing" type="default" id="eQf-FC-Vkq"/>
+                            <constraint firstItem="SAd-Su-PDC" firstAttribute="top" secondItem="od3-f1-Lhh" secondAttribute="top" constant="94" id="nTU-eF-m51"/>
+                            <constraint firstItem="SAd-Su-PDC" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="trn-eS-uz1"/>
+                            <constraint firstItem="gAG-AM-WeS" firstAttribute="top" secondItem="X5C-Y1-oxx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="whI-aJ-LjG"/>
+                            <constraint firstItem="gAG-AM-WeS" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wnC-MJ-ah9"/>
+                            <constraint firstItem="XRV-4a-dkd" firstAttribute="bottom" secondItem="od3-f1-Lhh" secondAttribute="bottom" type="default" id="xDe-Z3-e8s"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Event" id="xL0-fh-4Nb"/>
+                    <navigationItem key="navigationItem" title="Add Event" id="xL0-fh-4Nb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7yQ-cI-Pqv"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdl-ff-FKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
