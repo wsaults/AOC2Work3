@@ -37,7 +37,7 @@
     [titleTextField setDelegate:self];
     [descriptionTextField setDelegate:self];
     
-    // Set the date pickers minimum date to today's date.
+    // Set the date picker's minimum date to today's date.
     [datePicker setMinimumDate:[NSDate date]];
 }
 
@@ -53,17 +53,13 @@
 
 #pragma  mark - EventsManager deleage
 -(void)saveEvent {
-    NSLog(@"Save event!");
-    NSLog(@"%@",[titleTextField text]);
-    NSLog(@"%@",[datePicker date]);
-    NSLog(@"%@",[descriptionTextField text]);
-    
-    StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:[titleTextField text] date:[datePicker date] description:[descriptionTextField text]];
+    StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:[titleTextField text]
+                                                                             date:[datePicker date]
+                                                                      description:[descriptionTextField text]];
     
     [[[EventsManager sharedEventsManager] savedEvents] addObject:event];
     
-    NSLog(@"===============");
-    NSLog(@"Event title: %@",[[[[EventsManager sharedEventsManager] savedEvents] objectAtIndex:0] eventTitle]);
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma  mark - UITextField deleage

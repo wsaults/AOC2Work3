@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol EventsManagerDeleage <NSObject>
+@protocol EventsManagerDelegate <NSObject>
 
 @required
 -(void)saveEvent;
@@ -19,7 +19,7 @@
 
 +(EventsManager *)sharedEventsManager;
 
-@property (nonatomic, weak) id <EventsManagerDeleage> deleage;
+@property (nonatomic, weak) id <EventsManagerDelegate> delegate;
 @property (nonatomic, strong) NSMutableArray *savedEvents;
 
 @end

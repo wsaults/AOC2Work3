@@ -39,6 +39,7 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EventCell" forIndexPath:indexPath];
+    // Clear out any cells from the last load.
     for(UIView *subView in [cell subviews]) {
         [subView removeFromSuperview];
     }
@@ -69,6 +70,7 @@
         [cell addSubview:description];
         [cell addSubview:date];
     } else {
+        // If there are no saved events...
         StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:@"No saved events." date:nil description:nil];
         UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 20)];
         [title setText:[event eventTitle]];
