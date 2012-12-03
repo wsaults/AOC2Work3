@@ -36,7 +36,6 @@
     return ([[[EventsManager sharedEventsManager] savedEvents] count] > 0) ? [[[EventsManager sharedEventsManager] savedEvents] count] : 1;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EventCell" forIndexPath:indexPath];
     // Clear out any cells from the last load.

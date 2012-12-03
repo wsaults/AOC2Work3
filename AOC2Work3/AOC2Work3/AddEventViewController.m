@@ -51,7 +51,7 @@
     [self saveEvent];
 }
 
-#pragma  mark - EventsManager deleage
+#pragma mark - EventsManager deleage
 -(void)saveEvent {
     StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:[titleTextField text]
                                                                              date:[datePicker date]
@@ -62,7 +62,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma  mark - UITextField deleage
+#pragma mark - UITextField deleage
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];    
     return YES;
