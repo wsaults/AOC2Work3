@@ -28,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE93A6A7166C22E400E81494 /* Definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
 		BECBB884166AED8200A29DBE /* AOC2Work3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AOC2Work3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECBB888166AED8200A29DBE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BECBB88A166AED8200A29DBE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -133,6 +134,7 @@
 				BECBB89A166AED8300A29DBE /* Default.png */,
 				BECBB89C166AED8300A29DBE /* Default@2x.png */,
 				BECBB89E166AED8300A29DBE /* Default-568h@2x.png */,
+				BE93A6A7166C22E400E81494 /* Definitions.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -338,6 +340,7 @@
 				BECBB8AA166AED8300A29DBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

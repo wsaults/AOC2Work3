@@ -29,7 +29,7 @@
 
 #pragma mark - UICollectionView Data Source
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5; // TODO: depends on the number of events.
+    return ([[[EventsManager sharedEventsManager] savedEvents] count] > 0) ? [[[EventsManager sharedEventsManager] savedEvents] count] : 1;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -38,23 +38,38 @@
     [cell setBackgroundColor:[UIColor colorWithRed:237 green:237 blue:237 alpha:.5]];
     
     // Event details
-    StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:@"Title" date:[NSDate date] description:@"Description"];
-    
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 20)];
-    [title setText:[event eventTitle]];
-    
-    UILabel *description = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, cell.frame.size.width, 20)];
-    [description setText:[event eventDescription]];
-    
-    UILabel *date = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, cell.frame.size.width, 20)];
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-//    [dateFormatter setDateStyle:NSDateFormatterFullStyle];
-    [dateFormatter setDateFormat:@"EEEE MM/dd/yyyy hh:mm a"];
-    [date setText:[dateFormatter stringFromDate:[event eventDate]]];
-    
-    [cell addSubview:title];
-    [cell addSubview:description];
-    [cell addSubview:date];
+    if ([[[EventsManager sharedEventsManager] savedEvents] count] > 0) {
+        
+        id event = [[[EventsManager sharedEventsManager] savedEvents] objectAtIndex:indexPath.row];
+        
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 20)];
+        [title setText:[event eventTitle]];
+        [title setTextAlignment:NSTextAlignmentCenter];
+        [title setFont:[UIFont boldSystemFontOfSize:15]];
+        [title setBackgroundColor:[UIColor clearColor]];
+        
+        UILabel *description = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, cell.frame.size.width, 20)];
+        [description setText:[event eventDescription]];
+        [description setNumberOfLines:3];
+        
+        UILabel *date = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, cell.frame.size.width, 20)];
+        NSDateFormatter *dateFormatter = [NSDateFormatter new];
+        [dateFormatter setDateFormat:@"EEEE MM/dd/yyyy hh:mm a"];
+        [date setText:[dateFormatter stringFromDate:[event eventDate]]];
+        
+        [cell addSubview:title];
+        [cell addSubview:description];
+        [cell addSubview:date];
+    } else {
+        StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:@"No saved events." date:nil description:nil];
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 20)];
+        [title setText:[event eventTitle]];
+        [title setTextAlignment:NSTextAlignmentCenter];
+        [title setFont:[UIFont boldSystemFontOfSize:15]];
+        [title setBackgroundColor:[UIColor clearColor]];
+        
+        [cell addSubview:title];
+    }
     return cell;
 }
 

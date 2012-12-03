@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventsManager.h"
 
-@interface AddEventViewController : UIViewController
+@interface AddEventViewController : UIViewController <EventsManagerDeleage, UITextFieldDelegate>
 
 @end

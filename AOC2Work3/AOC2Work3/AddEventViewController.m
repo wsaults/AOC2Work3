@@ -7,8 +7,14 @@
 //
 
 #import "AddEventViewController.h"
+#import "Definitions.h"
+#import "EventFactory.h"
 
-@interface AddEventViewController ()
+@interface AddEventViewController () {
+    IBOutlet UITextField *titleTextField;
+    IBOutlet UITextField *descriptionTextField;
+    IBOutlet UIDatePicker *datePicker;
+}
 
 @end
 
@@ -26,7 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [titleTextField setDelegate:self];
+    [descriptionTextField setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +42,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma  mark - EventsManager deleage
+-(void)saveEvent {
+    StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:[titleTextField text] date:[datePicker date] description:[descriptionTextField text]];
+    
+    [[[EventsManager sharedEventsManager] savedEvents] addObject:event];
+}
+
+#pragma  mark - UITextField deleage
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];    
+    return YES;
+}
 @end
