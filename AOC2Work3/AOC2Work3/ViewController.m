@@ -22,6 +22,10 @@
 	[self.eventCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"EventCell"];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [self.eventCollectionView reloadData];
+}
+
 -(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -35,6 +39,10 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EventCell" forIndexPath:indexPath];
+    for(UIView *subView in [cell subviews]) {
+        [subView removeFromSuperview];
+    }
+    
     [cell setBackgroundColor:[UIColor colorWithRed:237 green:237 blue:237 alpha:.5]];
     
     // Event details
@@ -45,7 +53,7 @@
         UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 20)];
         [title setText:[event eventTitle]];
         [title setTextAlignment:NSTextAlignmentCenter];
-        [title setFont:[UIFont boldSystemFontOfSize:15]];
+        [title setFont:[UIFont boldSystemFontOfSize:18]];
         [title setBackgroundColor:[UIColor clearColor]];
         
         UILabel *description = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, cell.frame.size.width, 20)];
@@ -65,7 +73,7 @@
         UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 20)];
         [title setText:[event eventTitle]];
         [title setTextAlignment:NSTextAlignmentCenter];
-        [title setFont:[UIFont boldSystemFontOfSize:15]];
+        [title setFont:[UIFont boldSystemFontOfSize:18]];
         [title setBackgroundColor:[UIColor clearColor]];
         
         [cell addSubview:title];

@@ -35,7 +35,7 @@ static EventsManager *sharedEventsManager;
 -(id)init {
     self = [super init];
     if (self != nil) {
-        // Initilization
+        _savedEvents = [NSMutableArray new];
     }
     return sharedEventsManager;
 }

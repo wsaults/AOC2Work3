@@ -13,9 +13,9 @@
 -(id)initWithTitle:(NSString *)title date:(NSDate *)date description:(NSString *)description {
     self = [super init];
     if (self != nil) {
-        _eventTitle = title;
+        _eventTitle = [NSString stringWithFormat:@"%@",title];
         _eventDate = date;
-        _eventDescription = description;
+        _eventDescription = [NSString stringWithFormat:@"%@",description];
     }
     return self;
 }

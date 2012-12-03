@@ -16,6 +16,8 @@
     IBOutlet UIDatePicker *datePicker;
 }
 
+-(IBAction)addEvent:(id)sender;
+
 @end
 
 @implementation AddEventViewController
@@ -34,6 +36,9 @@
     [super viewDidLoad];
     [titleTextField setDelegate:self];
     [descriptionTextField setDelegate:self];
+    
+    // Set the date pickers minimum date to today's date.
+    [datePicker setMinimumDate:[NSDate date]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,11 +47,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)addEvent:(id)sender {
+    [self saveEvent];
+}
+
 #pragma  mark - EventsManager deleage
 -(void)saveEvent {
+    NSLog(@"Save event!");
+    NSLog(@"%@",[titleTextField text]);
+    NSLog(@"%@",[datePicker date]);
+    NSLog(@"%@",[descriptionTextField text]);
+    
     StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:[titleTextField text] date:[datePicker date] description:[descriptionTextField text]];
     
     [[[EventsManager sharedEventsManager] savedEvents] addObject:event];
+    
+    NSLog(@"===============");
+    NSLog(@"Event title: %@",[[[[EventsManager sharedEventsManager] savedEvents] objectAtIndex:0] eventTitle]);
 }
 
 #pragma  mark - UITextField deleage
