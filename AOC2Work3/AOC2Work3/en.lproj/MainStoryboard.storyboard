@@ -15,7 +15,7 @@
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QeN-Xk-zVS">
                                 <color key="backgroundColor" red="0.86049107140000003" green="0.86049107140000003" blue="0.86049107140000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="10" id="GZf-Bj-eBh">
-                                    <size key="itemSize" width="300" height="100"/>
+                                    <size key="itemSize" width="300" height="90"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
@@ -108,19 +108,27 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose a date for the event:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqb-dI-dYK">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="X5C-Y1-oxx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="31j-2c-icz"/>
+                            <constraint firstItem="eqb-dI-dYK" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7Os-nh-TrE"/>
                             <constraint firstAttribute="trailing" secondItem="SAd-Su-PDC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7PN-26-N5c"/>
                             <constraint firstItem="X5C-Y1-oxx" firstAttribute="top" secondItem="od3-f1-Lhh" secondAttribute="top" constant="20" symbolic="YES" type="default" id="8YT-nJ-mAU"/>
                             <constraint firstItem="XRV-4a-dkd" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" type="default" id="AFV-Xk-3eE"/>
+                            <constraint firstAttribute="trailing" secondItem="eqb-dI-dYK" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ayn-2d-VZi"/>
                             <constraint firstAttribute="trailing" secondItem="c1b-gf-Jnx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="G9p-A1-fzg"/>
                             <constraint firstAttribute="trailing" secondItem="gAG-AM-WeS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IUE-XU-zpT"/>
                             <constraint firstItem="X5C-Y1-oxx" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="J5x-Qk-dMQ"/>
                             <constraint firstItem="c1b-gf-Jnx" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mxm-bd-DPg"/>
                             <constraint firstItem="c1b-gf-Jnx" firstAttribute="top" secondItem="SAd-Su-PDC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ZW2-2o-Fn2"/>
                             <constraint firstItem="XRV-4a-dkd" firstAttribute="trailing" secondItem="od3-f1-Lhh" secondAttribute="trailing" type="default" id="eQf-FC-Vkq"/>
+                            <constraint firstItem="XRV-4a-dkd" firstAttribute="top" secondItem="eqb-dI-dYK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kzD-PE-3S0"/>
                             <constraint firstItem="SAd-Su-PDC" firstAttribute="top" secondItem="od3-f1-Lhh" secondAttribute="top" constant="94" id="nTU-eF-m51"/>
                             <constraint firstItem="SAd-Su-PDC" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="trn-eS-uz1"/>
                             <constraint firstItem="gAG-AM-WeS" firstAttribute="top" secondItem="X5C-Y1-oxx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="whI-aJ-LjG"/>
