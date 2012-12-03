@@ -94,7 +94,7 @@
 
 #pragma mark - UICollectionView Delegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    // TODO: do something when the user selects a cell.
+    // TODO: Allow user to edit event when tapped.
 }
 
 @end

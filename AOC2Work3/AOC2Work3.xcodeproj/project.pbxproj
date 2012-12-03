@@ -23,8 +23,6 @@
 		BECBB8B7166AEDFB00A29DBE /* StandardEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBB8B6166AEDFB00A29DBE /* StandardEvent.m */; };
 		BECBB8BE166AF78D00A29DBE /* EventsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBB8BD166AF78D00A29DBE /* EventsManager.m */; };
 		BECBB8C5166AFFE900A29DBE /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BECBB8C4166AFFE900A29DBE /* AddEventViewController.m */; };
-		BECBB8CD166B042200A29DBE /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = BECBB8CB166B042200A29DBE /* add.png */; };
-		BECBB8CE166B042200A29DBE /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BECBB8CC166B042200A29DBE /* add@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +53,6 @@
 		BECBB8BD166AF78D00A29DBE /* EventsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsManager.m; sourceTree = "<group>"; };
 		BECBB8C3166AFFE900A29DBE /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
 		BECBB8C4166AFFE900A29DBE /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
-		BECBB8CB166B042200A29DBE /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
-		BECBB8CC166B042200A29DBE /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +138,6 @@
 		BECBB8C6166B035B00A29DBE /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				BECBB8CB166B042200A29DBE /* add.png */,
-				BECBB8CC166B042200A29DBE /* add@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -204,8 +198,6 @@
 				BECBB89D166AED8300A29DBE /* Default@2x.png in Resources */,
 				BECBB89F166AED8300A29DBE /* Default-568h@2x.png in Resources */,
 				BECBB8A2166AED8300A29DBE /* MainStoryboard.storyboard in Resources */,
-				BECBB8CD166B042200A29DBE /* add.png in Resources */,
-				BECBB8CE166B042200A29DBE /* add@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
