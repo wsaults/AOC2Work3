@@ -53,13 +53,23 @@
 
 #pragma mark - EventsManager deleage
 -(void)saveEvent {
-    StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:[titleTextField text]
-                                                                             date:[datePicker date]
-                                                                      description:[descriptionTextField text]];
+    if ([[titleTextField text] length] > 0) {
+        StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:[titleTextField text]
+                                                                                 date:[datePicker date]
+                                                                          description:[descriptionTextField text]];
+        
+        [[[EventsManager sharedEventsManager] savedEvents] addObject:event];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uh oh..."
+                                                        message:@"Please provide a title for this event."
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
     
-    [[[EventsManager sharedEventsManager] savedEvents] addObject:event];
-    
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UITextField deleage

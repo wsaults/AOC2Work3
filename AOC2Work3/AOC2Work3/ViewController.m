@@ -10,6 +10,9 @@
 #import "EventFactory.h"
 #import "EventsManager.h"
 #import "BaseEvent.h"
+#import "Definitions.h"
+#import <QuartzCore/QuartzCore.h>
+
 
 @interface ViewController ()
 
@@ -44,6 +47,7 @@
     }
     
     [cell setBackgroundColor:[UIColor colorWithRed:237 green:237 blue:237 alpha:.5]];
+    [cell.layer setCornerRadius:5.0f];
     
     // Event details
     if ([[[EventsManager sharedEventsManager] savedEvents] count] > 0) {
@@ -51,20 +55,20 @@
         id event = [[[EventsManager sharedEventsManager] savedEvents] objectAtIndex:indexPath.row];
         
         // Title
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 20)];
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, kEventElementPadding, cell.frame.size.width, 20)];
         [title setText:[event eventTitle]];
         [title setTextAlignment:NSTextAlignmentCenter];
         [title setFont:[UIFont boldSystemFontOfSize:18]];
         [title setBackgroundColor:[UIColor clearColor]];
         
         // Description
-        UILabel *description = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, cell.frame.size.width, 20)];
+        UILabel *description = [[UILabel alloc] initWithFrame:CGRectMake(kEventElementPadding, 30, cell.frame.size.width, 20)];
         [description setText:[event eventDescription]];
         [description setNumberOfLines:3];
         [description setBackgroundColor:[UIColor clearColor]];
         
         // Date
-        UILabel *date = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, cell.frame.size.width, 20)];
+        UILabel *date = [[UILabel alloc] initWithFrame:CGRectMake(kEventElementPadding, 55, cell.frame.size.width, 20)];
         NSDateFormatter *dateFormatter = [NSDateFormatter new];
         [dateFormatter setDateFormat:@"EEEE MM/dd/yyyy hh:mm a"];
         [date setText:[dateFormatter stringFromDate:[event eventDate]]];
@@ -76,7 +80,7 @@
     } else {
         // If there are no saved events...
         StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:@"No saved events." date:nil description:nil];
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 20)];
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, kEventElementPadding, cell.frame.size.width, 20)];
         [title setText:[event eventTitle]];
         [title setTextAlignment:NSTextAlignmentCenter];
         [title setFont:[UIFont boldSystemFontOfSize:18]];

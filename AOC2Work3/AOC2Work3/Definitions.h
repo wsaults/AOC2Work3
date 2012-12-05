@@ -14,4 +14,7 @@
 #define kDateKey "date"
 
 
+#pragma mark - ViewController
+#define kEventElementPadding 10
+
 #endif
