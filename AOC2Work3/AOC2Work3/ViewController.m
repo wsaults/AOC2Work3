@@ -46,7 +46,7 @@
         [subView removeFromSuperview];
     }
     
-    [cell setBackgroundColor:[UIColor colorWithRed:237 green:237 blue:237 alpha:.5]];
+    [cell setBackgroundColor:[UIColor colorWithRed:150 green:150 blue:150 alpha:.7]];
     [cell.layer setCornerRadius:5.0f];
     
     // Event details
@@ -74,6 +74,7 @@
         [date setText:[dateFormatter stringFromDate:[event eventDate]]];
         [date setBackgroundColor:[UIColor clearColor]];
         
+        // Add the subviews
         [cell addSubview:title];
         [cell addSubview:description];
         [cell addSubview:date];
