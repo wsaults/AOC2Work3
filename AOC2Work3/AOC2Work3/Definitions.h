@@ -13,6 +13,7 @@
 #define kDescriptionKey "descrpition"
 #define kDateKey "date"
 
+#define kSavedEventsKey @"SavedEvents"
 
 #pragma mark - ViewController
 #define kEventElementPadding 10

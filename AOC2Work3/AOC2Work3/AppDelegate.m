@@ -7,12 +7,27 @@
 //
 
 #import "AppDelegate.h"
+#import "EventsManager.h"
+#import "Definitions.h"
+#import "BaseEvent.h"
+#import "StandardEvent.h"
+#import "EventFactory.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // Populat the savedEvents with userDefault data.
+    if ([[NSUserDefaults standardUserDefaults] arrayForKey:kSavedEventsKey].count > 0) {
+        NSLog(@"%@",[[NSUserDefaults standardUserDefaults] arrayForKey:kSavedEventsKey]);
+        for (BaseEvent *e in [[NSUserDefaults standardUserDefaults] arrayForKey:kSavedEventsKey]) {
+            StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:[e valueForKey:@"EVENT_TITLE"]
+                                             date:[NSString stringWithFormat:@"%@",[e valueForKey:@"EVENT_DATE"]]
+                                      description:[e valueForKey:@"EVENT_DESCRIPTION"]];
+            
+            [[[EventsManager sharedEventsManager] savedEvents] addObject:event];
+        }
+    }
     return YES;
 }
 							

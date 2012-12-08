@@ -63,6 +63,24 @@
         
         id event = [[[EventsManager sharedEventsManager] savedEvents] objectAtIndex:indexPath.row];
         
+        NSMutableArray *eventsToSave = [[NSMutableArray alloc] initWithCapacity:[EventsManager sharedEventsManager].savedEvents.count + 1];
+        for (BaseEvent *e in [[EventsManager sharedEventsManager] savedEvents]) {
+            NSMutableDictionary *dictionary = [NSMutableDictionary new];
+            [dictionary setObject:e.eventTitle forKey:@"EVENT_TITLE"];
+            [dictionary setObject:e.eventDescription forKey:@"EVENT_DESCRIPTION"];
+            [dictionary setObject:[NSString stringWithFormat:@"%@", e.eventDate] forKey:@"EVENT_DATE"];
+            
+            [eventsToSave addObject:dictionary];
+        }
+        
+        if (eventsToSave != nil) {
+            // Save the user defaults.
+            NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
+            [standardDefaults setObject:eventsToSave forKey:kSavedEventsKey];
+            NSLog(@"%@",[standardDefaults arrayForKey:kSavedEventsKey]);
+            [standardDefaults synchronize];
+        }
+        
         // Title
         UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, kEventElementPadding, cell.frame.size.width, 20)];
         [title setText:[event eventTitle]];
@@ -87,6 +105,7 @@
         [cell addSubview:title];
         [cell addSubview:description];
         [cell addSubview:date];
+        
     } else {
         // If there are no saved events...
         StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:@"No saved events." date:nil description:nil];
@@ -117,7 +136,6 @@
     if (CGRectContainsPoint(slideBar.bounds, touchPoint)) { // Look for touches that are within the bounds of the sliderBar.
         okToMoveSlideBar = YES;
     }
-    
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {

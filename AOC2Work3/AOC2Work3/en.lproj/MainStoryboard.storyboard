@@ -170,27 +170,38 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="swipe right to close" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwC-KD-8dE">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="09H-If-CH4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="X5C-Y1-oxx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="31j-2c-icz"/>
                             <constraint firstItem="eqb-dI-dYK" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7Os-nh-TrE"/>
-                            <constraint firstAttribute="trailing" secondItem="SAd-Su-PDC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7PN-26-N5c"/>
                             <constraint firstItem="X5C-Y1-oxx" firstAttribute="top" secondItem="od3-f1-Lhh" secondAttribute="top" constant="20" symbolic="YES" type="default" id="8YT-nJ-mAU"/>
                             <constraint firstItem="XRV-4a-dkd" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" type="default" id="AFV-Xk-3eE"/>
-                            <constraint firstAttribute="trailing" secondItem="eqb-dI-dYK" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ayn-2d-VZi"/>
-                            <constraint firstAttribute="trailing" secondItem="c1b-gf-Jnx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="G9p-A1-fzg"/>
-                            <constraint firstAttribute="trailing" secondItem="gAG-AM-WeS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IUE-XU-zpT"/>
                             <constraint firstItem="X5C-Y1-oxx" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="J5x-Qk-dMQ"/>
                             <constraint firstItem="c1b-gf-Jnx" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mxm-bd-DPg"/>
+                            <constraint firstItem="uwC-KD-8dE" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" type="default" id="Myp-Ax-Sph"/>
+                            <constraint firstItem="uwC-KD-8dE" firstAttribute="centerX" secondItem="eqb-dI-dYK" secondAttribute="centerX" type="default" id="Nll-XL-Jd2"/>
+                            <constraint firstItem="uwC-KD-8dE" firstAttribute="centerX" secondItem="od3-f1-Lhh" secondAttribute="centerX" type="default" id="PoM-qF-StN"/>
+                            <constraint firstItem="uwC-KD-8dE" firstAttribute="centerX" secondItem="X5C-Y1-oxx" secondAttribute="centerX" type="default" id="Vnk-08-ibC"/>
                             <constraint firstItem="c1b-gf-Jnx" firstAttribute="top" secondItem="SAd-Su-PDC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ZW2-2o-Fn2"/>
-                            <constraint firstItem="XRV-4a-dkd" firstAttribute="trailing" secondItem="od3-f1-Lhh" secondAttribute="trailing" type="default" id="eQf-FC-Vkq"/>
+                            <constraint firstItem="uwC-KD-8dE" firstAttribute="centerX" secondItem="c1b-gf-Jnx" secondAttribute="centerX" type="default" id="dbc-ML-6QV"/>
+                            <constraint firstItem="uwC-KD-8dE" firstAttribute="centerX" secondItem="XRV-4a-dkd" secondAttribute="centerX" type="default" id="gdX-Mv-kGC"/>
                             <constraint firstItem="XRV-4a-dkd" firstAttribute="top" secondItem="eqb-dI-dYK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kzD-PE-3S0"/>
                             <constraint firstItem="SAd-Su-PDC" firstAttribute="top" secondItem="od3-f1-Lhh" secondAttribute="top" constant="94" id="nTU-eF-m51"/>
+                            <constraint firstItem="uwC-KD-8dE" firstAttribute="centerX" secondItem="SAd-Su-PDC" secondAttribute="centerX" type="default" id="nvR-to-zRK"/>
+                            <constraint firstItem="uwC-KD-8dE" firstAttribute="top" secondItem="od3-f1-Lhh" secondAttribute="top" type="default" id="oen-Eg-qKh"/>
                             <constraint firstItem="SAd-Su-PDC" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="trn-eS-uz1"/>
                             <constraint firstItem="gAG-AM-WeS" firstAttribute="top" secondItem="X5C-Y1-oxx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="whI-aJ-LjG"/>
                             <constraint firstItem="gAG-AM-WeS" firstAttribute="leading" secondItem="od3-f1-Lhh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wnC-MJ-ah9"/>
                             <constraint firstItem="XRV-4a-dkd" firstAttribute="bottom" secondItem="od3-f1-Lhh" secondAttribute="bottom" type="default" id="xDe-Z3-e8s"/>
+                            <constraint firstItem="uwC-KD-8dE" firstAttribute="centerX" secondItem="gAG-AM-WeS" secondAttribute="centerX" type="default" id="xu6-04-bET"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Event" id="xL0-fh-4Nb">
@@ -208,7 +219,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdl-ff-FKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828" y="101"/>
+            <point key="canvasLocation" x="842" y="101"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lfq-Yb-Xgr">
@@ -244,6 +255,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>

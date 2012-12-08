@@ -7,6 +7,8 @@
 //
 
 #import "BaseEvent.h"
+#import "EventsManager.h"
+#import "Definitions.h"
 
 @implementation BaseEvent
 
