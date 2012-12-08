@@ -17,12 +17,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Populat the savedEvents with userDefault data.
+    // Populate the savedEvents with userDefault data.
     if ([[NSUserDefaults standardUserDefaults] arrayForKey:kSavedEventsKey].count > 0) {
         NSLog(@"%@",[[NSUserDefaults standardUserDefaults] arrayForKey:kSavedEventsKey]);
+        NSDateFormatter *formatter = [NSDateFormatter new];
+        [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss zzzz"];
+        
         for (BaseEvent *e in [[NSUserDefaults standardUserDefaults] arrayForKey:kSavedEventsKey]) {
             StandardEvent *event = (StandardEvent *)[EventFactory createNewEventWithTitle:[e valueForKey:@"EVENT_TITLE"]
-                                             date:[NSString stringWithFormat:@"%@",[e valueForKey:@"EVENT_DATE"]]
+                                             date:[formatter dateFromString:[e valueForKey:@"EVENT_DATE"]]
                                       description:[e valueForKey:@"EVENT_DESCRIPTION"]];
             
             [[[EventsManager sharedEventsManager] savedEvents] addObject:event];
