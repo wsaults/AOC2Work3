@@ -111,29 +111,37 @@
 #pragma mark - Touches
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
-    if (slideBar.frame.origin.x >= 2 && slideBar.frame.origin.x < 217) {
-        
-        // Animate back to original position to add resistance.
-        [UIView animateWithDuration:.2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-            [slideBar setFrame:CGRectMake(2, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
-        } completion:^(BOOL finished){
-        }];
-        
-        slideBar.center = [touch locationInView:slideBarContainer];
-        [slideBar setFrame:CGRectMake(slideBar.frame.origin.x, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
+    CGPoint touchPoint = [touch locationInView:slideBar];
+    if (touchPoint.x > 30) { // Look for touches that are greater than half the width of the sliderBar.
+        if (slideBar.frame.origin.x >= 2 && slideBar.frame.origin.x < 217) {
+            
+            // Animate back to original position to add resistance.
+            [UIView animateWithDuration:.2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+                [slideBar setFrame:CGRectMake(2, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
+            } completion:^(BOOL finished){
+            }];
+            
+            // Set the center of the sliderBar then set the Y origin so it does not go up or down.
+            slideBar.center = [touch locationInView:slideBarContainer];
+            [slideBar setFrame:CGRectMake(slideBar.frame.origin.x, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
+        }
     }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    // If the slideBar is too far left...
     if (slideBar.frame.origin.x <= 2) {
         [slideBar setFrame:CGRectMake(2, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
     }
     
+    // If the slideBar has moved...
     if (slideBar.frame.origin.x > 2) {
         if (slideBar.frame.origin.x > 215) {
-            NSLog(@"Segue");
+            // Segue to the add event controller.
+            [self performSegueWithIdentifier:@"addEventSeg" sender:self];
         }
         
+        // Reset the slidebar.
         [UIView animateWithDuration:.2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
             [slideBar setFrame:CGRectMake(2, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
         } completion:^(BOOL finished){
