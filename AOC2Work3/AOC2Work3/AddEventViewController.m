@@ -42,7 +42,7 @@
     [datePicker setMinimumDate:[NSDate date]];
     
     // Create/add the gesture recognizer.
-    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismissView)];
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(saveEvent)];
     [swipeRecognizer setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.view addGestureRecognizer:swipeRecognizer];
 }
