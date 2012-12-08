@@ -15,7 +15,6 @@
 
 
 @interface ViewController () {
-
     IBOutlet UIView *slideBarContainer;
     IBOutlet UIView *slideBar;
     BOOL okToMoveSlideBar;
@@ -77,7 +76,6 @@
             // Save the user defaults.
             NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
             [standardDefaults setObject:eventsToSave forKey:kSavedEventsKey];
-            NSLog(@"%@",[standardDefaults arrayForKey:kSavedEventsKey]);
             [standardDefaults synchronize];
         }
         

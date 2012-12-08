@@ -19,7 +19,6 @@
 {
     // Populate the savedEvents with userDefault data.
     if ([[NSUserDefaults standardUserDefaults] arrayForKey:kSavedEventsKey].count > 0) {
-        NSLog(@"%@",[[NSUserDefaults standardUserDefaults] arrayForKey:kSavedEventsKey]);
         NSDateFormatter *formatter = [NSDateFormatter new];
         [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss zzzz"];
         
