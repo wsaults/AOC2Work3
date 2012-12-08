@@ -18,6 +18,7 @@
 
     IBOutlet UIView *slideBarContainer;
     IBOutlet UIView *slideBar;
+    BOOL okToMoveSlideBar;
 }
 
 @end
@@ -34,6 +35,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [self.eventCollectionView reloadData];
+    okToMoveSlideBar = NO;
 }
 
 -(void)didReceiveMemoryWarning {
@@ -109,42 +111,54 @@
 }
 
 #pragma mark - Touches
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:slideBar];
-    if (touchPoint.x > 30) { // Look for touches that are greater than half the width of the sliderBar.
-        if (slideBar.frame.origin.x >= 2 && slideBar.frame.origin.x < 217) {
+    if (CGRectContainsPoint(slideBar.bounds, touchPoint)) { // Look for touches that are within the bounds of the sliderBar.
+        okToMoveSlideBar = YES;
+    }
+    
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    if (okToMoveSlideBar) {
+        if (slideBar.frame.origin.x >= kSlideBarStartX && slideBar.frame.origin.x < kSlideBarEndX) {
             
             // Animate back to original position to add resistance.
             [UIView animateWithDuration:.2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-                [slideBar setFrame:CGRectMake(2, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
-            } completion:^(BOOL finished){
-            }];
+                [slideBar setFrame:CGRectMake(kSlideBarStartX, kSlideBarY, slideBar.frame.size.width, slideBar.frame.size.height)];
+            } completion:nil];
             
             // Set the center of the sliderBar then set the Y origin so it does not go up or down.
             slideBar.center = [touch locationInView:slideBarContainer];
-            [slideBar setFrame:CGRectMake(slideBar.frame.origin.x, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
+            [slideBar setFrame:CGRectMake(slideBar.frame.origin.x, kSlideBarY, slideBar.frame.size.width, slideBar.frame.size.height)];
+            // If the slideBar is too far left...
+            if (slideBar.frame.origin.x < kSlideBarStartX) {
+                [slideBar setFrame:CGRectMake(kSlideBarStartX, kSlideBarY, slideBar.frame.size.width, slideBar.frame.size.height)];
+            }
         }
     }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     // If the slideBar is too far left...
-    if (slideBar.frame.origin.x <= 2) {
-        [slideBar setFrame:CGRectMake(2, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
+    if (slideBar.frame.origin.x <= kSlideBarStartX) {
+        [slideBar setFrame:CGRectMake(kSlideBarStartX, kSlideBarY, slideBar.frame.size.width, slideBar.frame.size.height)];
     }
     
     // If the slideBar has moved...
-    if (slideBar.frame.origin.x > 2) {
-        if (slideBar.frame.origin.x > 215) {
+    if (slideBar.frame.origin.x > kSlideBarStartX) {
+        if (slideBar.frame.origin.x > kSlideBarEndX) {
             // Segue to the add event controller.
             [self performSegueWithIdentifier:@"addEventSeg" sender:self];
         }
         
         // Reset the slidebar.
         [UIView animateWithDuration:.2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-            [slideBar setFrame:CGRectMake(2, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
+            [slideBar setFrame:CGRectMake(kSlideBarStartX, kSlideBarY, slideBar.frame.size.width, slideBar.frame.size.height)];
         } completion:^(BOOL finished){
+            okToMoveSlideBar = NO;
         }];
     }
 }

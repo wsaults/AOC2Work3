@@ -51,20 +51,21 @@
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Slide to add" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiC-9G-Jpx">
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="190" id="YK5-14-OXR"/>
+                                                    <constraint firstAttribute="height" constant="46" id="vc6-wl-Lfh"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="qiC-9G-Jpx" firstAttribute="bottom" secondItem="KKo-DG-pPN" secondAttribute="bottom" type="default" id="BNi-RI-NMX"/>
                                             <constraint firstItem="KKo-DG-pPN" firstAttribute="leading" secondItem="bk5-ol-9Xt" secondAttribute="leading" constant="2" id="DKY-C5-IBy"/>
+                                            <constraint firstItem="qiC-9G-Jpx" firstAttribute="top" secondItem="KKo-DG-pPN" secondAttribute="top" type="default" id="Vi6-hZ-QAu"/>
                                             <constraint firstItem="qiC-9G-Jpx" firstAttribute="leading" secondItem="KKo-DG-pPN" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="X3Z-0F-RBo"/>
-                                            <constraint firstItem="KKo-DG-pPN" firstAttribute="centerY" secondItem="bk5-ol-9Xt" secondAttribute="centerY" type="default" id="aGd-tV-aPF"/>
                                             <constraint firstAttribute="trailing" secondItem="qiC-9G-Jpx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hnc-sF-WPx"/>
-                                            <constraint firstItem="KKo-DG-pPN" firstAttribute="top" secondItem="bk5-ol-9Xt" secondAttribute="top" constant="2" id="kSY-nD-QyM"/>
-                                            <constraint firstItem="qiC-9G-Jpx" firstAttribute="top" secondItem="bk5-ol-9Xt" secondAttribute="top" constant="14" id="sTi-eY-oXU"/>
+                                            <constraint firstItem="qiC-9G-Jpx" firstAttribute="centerY" secondItem="bk5-ol-9Xt" secondAttribute="centerY" type="default" id="y2Q-WU-oml"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -104,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="414" y="101"/>
+            <point key="canvasLocation" x="415" y="101"/>
         </scene>
         <!--Add Event View Controller - Add Event-->
         <scene sceneID="TJf-wx-Lwe">
@@ -243,9 +244,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>

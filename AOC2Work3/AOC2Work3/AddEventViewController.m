@@ -17,6 +17,7 @@
 }
 
 -(IBAction)addEvent:(id)sender;
+-(void)dismissView;
 
 @end
 
@@ -39,6 +40,11 @@
     
     // Set the date picker's minimum date to today's date.
     [datePicker setMinimumDate:[NSDate date]];
+    
+    // Create/add the gesture recognizer.
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismissView)];
+    [swipeRecognizer setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeRecognizer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +57,10 @@
     [self saveEvent];
 }
 
+-(void)dismissView {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark - EventsManager deleage
 -(void)saveEvent {
     if ([[titleTextField text] length] > 0) {
@@ -59,8 +69,7 @@
                                                                           description:[descriptionTextField text]];
         
         [[[EventsManager sharedEventsManager] savedEvents] addObject:event];
-        
-        [self.navigationController popViewControllerAnimated:YES];
+        [self dismissView];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uh oh..."
                                                         message:@"Please provide a title for this event."
@@ -69,7 +78,6 @@
                                               otherButtonTitles:nil, nil];
         [alert show];
     }
-    
 }
 
 #pragma mark - UITextField deleage

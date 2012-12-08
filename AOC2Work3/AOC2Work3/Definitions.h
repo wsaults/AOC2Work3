@@ -16,5 +16,8 @@
 
 #pragma mark - ViewController
 #define kEventElementPadding 10
+#define kSlideBarStartX 2
+#define kSlideBarEndX 215
+#define kSlideBarY 2
 
 #endif
