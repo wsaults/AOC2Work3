@@ -14,7 +14,11 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-@interface ViewController ()
+@interface ViewController () {
+
+    IBOutlet UIView *slideBarContainer;
+    IBOutlet UIView *slideBar;
+}
 
 @end
 
@@ -22,6 +26,9 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    [slideBarContainer.layer setCornerRadius:10.0f];
+    [slideBar.layer setCornerRadius:10.0f];
+    
 	[self.eventCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"EventCell"];
 }
 
@@ -99,6 +106,39 @@
 #pragma mark - UICollectionView Delegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Allow user to edit event when tapped.
+}
+
+#pragma mark - Touches
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    if (slideBar.frame.origin.x >= 2 && slideBar.frame.origin.x < 217) {
+        
+        // Animate back to original position to add resistance.
+        [UIView animateWithDuration:.2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+            [slideBar setFrame:CGRectMake(2, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
+        } completion:^(BOOL finished){
+        }];
+        
+        slideBar.center = [touch locationInView:slideBarContainer];
+        [slideBar setFrame:CGRectMake(slideBar.frame.origin.x, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
+    }
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (slideBar.frame.origin.x <= 2) {
+        [slideBar setFrame:CGRectMake(2, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
+    }
+    
+    if (slideBar.frame.origin.x > 2) {
+        if (slideBar.frame.origin.x > 215) {
+            NSLog(@"Segue");
+        }
+        
+        [UIView animateWithDuration:.2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+            [slideBar setFrame:CGRectMake(2, 2, slideBar.frame.size.width, slideBar.frame.size.height)];
+        } completion:^(BOOL finished){
+        }];
+    }
 }
 
 @end

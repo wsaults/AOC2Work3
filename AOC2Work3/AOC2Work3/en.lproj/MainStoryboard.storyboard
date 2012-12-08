@@ -26,12 +26,66 @@
                                     <outlet property="delegate" destination="2" id="mIt-jL-2vo"/>
                                 </connections>
                             </collectionView>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXH-OB-3Dy">
+                                <subviews>
+                                    <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bk5-ol-9Xt">
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKo-DG-pPN">
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=">" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHD-xP-jme">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="42" id="5IA-VO-ac8"/>
+                                                            <constraint firstAttribute="height" constant="21" id="aLs-Tz-c3b"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.92966757020000002" green="0.92966757020000002" blue="0.92966757020000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="eHD-xP-jme" firstAttribute="top" secondItem="KKo-DG-pPN" secondAttribute="top" constant="12" id="pCN-iy-tQ7"/>
+                                                    <constraint firstItem="eHD-xP-jme" firstAttribute="centerX" secondItem="KKo-DG-pPN" secondAttribute="centerX" type="default" id="rew-0G-GeY"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Slide to add" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiC-9G-Jpx">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="190" id="YK5-14-OXR"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="KKo-DG-pPN" firstAttribute="leading" secondItem="bk5-ol-9Xt" secondAttribute="leading" constant="2" id="DKY-C5-IBy"/>
+                                            <constraint firstItem="qiC-9G-Jpx" firstAttribute="leading" secondItem="KKo-DG-pPN" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="X3Z-0F-RBo"/>
+                                            <constraint firstItem="KKo-DG-pPN" firstAttribute="centerY" secondItem="bk5-ol-9Xt" secondAttribute="centerY" type="default" id="aGd-tV-aPF"/>
+                                            <constraint firstAttribute="trailing" secondItem="qiC-9G-Jpx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hnc-sF-WPx"/>
+                                            <constraint firstItem="KKo-DG-pPN" firstAttribute="top" secondItem="bk5-ol-9Xt" secondAttribute="top" constant="2" id="kSY-nD-QyM"/>
+                                            <constraint firstItem="qiC-9G-Jpx" firstAttribute="top" secondItem="bk5-ol-9Xt" secondAttribute="top" constant="14" id="sTi-eY-oXU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bk5-ol-9Xt" firstAttribute="leading" secondItem="BXH-OB-3Dy" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Qb5-X0-i3W"/>
+                                    <constraint firstAttribute="trailing" secondItem="bk5-ol-9Xt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="U9C-ap-edH"/>
+                                    <constraint firstItem="bk5-ol-9Xt" firstAttribute="centerY" secondItem="BXH-OB-3Dy" secondAttribute="centerY" type="default" id="wbs-8t-6IW"/>
+                                    <constraint firstItem="bk5-ol-9Xt" firstAttribute="top" secondItem="BXH-OB-3Dy" secondAttribute="top" constant="15" id="weG-WS-20S"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="BXH-OB-3Dy" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="1CL-pf-fIr"/>
                             <constraint firstItem="QeN-Xk-zVS" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="5lA-JH-zLl"/>
                             <constraint firstItem="QeN-Xk-zVS" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="CCS-cy-s6z"/>
+                            <constraint firstItem="BXH-OB-3Dy" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="Efw-ua-2Me"/>
+                            <constraint firstItem="BXH-OB-3Dy" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="KUH-eo-uJU"/>
                             <constraint firstItem="QeN-Xk-zVS" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="Ljk-y6-5jS"/>
+                            <constraint firstItem="BXH-OB-3Dy" firstAttribute="top" secondItem="3" secondAttribute="top" constant="336" id="mew-uB-9mu"/>
                             <constraint firstItem="QeN-Xk-zVS" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="ov1-WM-V7R"/>
                         </constraints>
                     </view>
@@ -44,6 +98,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="eventCollectionView" destination="QeN-Xk-zVS" id="TXf-c0-skI"/>
+                        <outlet property="slideBar" destination="KKo-DG-pPN" id="03l-t1-IZK"/>
+                        <outlet property="slideBarContainer" destination="bk5-ol-9Xt" id="awD-Ys-rI8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -195,6 +251,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="eventCollectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="slideBar" candidateClass="UIView"/>
+                <relationship kind="outlet" name="slideBarContainer" candidateClass="UIView"/>
             </relationships>
         </class>
     </classes>
