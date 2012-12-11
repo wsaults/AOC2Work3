@@ -91,9 +91,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Date Planner" id="RNP-ot-Wl7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Eax-fG-8yb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Eax-fG-8yb">
                             <connections>
-                                <segue destination="Dgq-gH-ec5" kind="push" identifier="addEventSeg" id="5q5-T7-6MQ"/>
+                                <action selector="saveEvents:" destination="2" id="eKs-Zf-bzR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -101,6 +101,7 @@
                         <outlet property="eventCollectionView" destination="QeN-Xk-zVS" id="TXf-c0-skI"/>
                         <outlet property="slideBar" destination="KKo-DG-pPN" id="03l-t1-IZK"/>
                         <outlet property="slideBarContainer" destination="bk5-ol-9Xt" id="awD-Ys-rI8"/>
+                        <segue destination="Dgq-gH-ec5" kind="push" identifier="addEventSeg" id="mJl-Gn-9Ty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -256,9 +257,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="saveEvents:"/>
                 <relationship kind="outlet" name="eventCollectionView" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="slideBar" candidateClass="UIView"/>
                 <relationship kind="outlet" name="slideBarContainer" candidateClass="UIView"/>

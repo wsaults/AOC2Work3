@@ -35,6 +35,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     [self.eventCollectionView reloadData];
     okToMoveSlideBar = NO;
+    [self saveEvents:nil];
 }
 
 -(void)didReceiveMemoryWarning {
@@ -61,23 +62,6 @@
     if ([[[EventsManager sharedEventsManager] savedEvents] count] > 0) {
         
         id event = [[[EventsManager sharedEventsManager] savedEvents] objectAtIndex:indexPath.row];
-        
-        NSMutableArray *eventsToSave = [[NSMutableArray alloc] initWithCapacity:[EventsManager sharedEventsManager].savedEvents.count + 1];
-        for (BaseEvent *e in [[EventsManager sharedEventsManager] savedEvents]) {
-            NSMutableDictionary *dictionary = [NSMutableDictionary new];
-            [dictionary setObject:e.eventTitle forKey:@"EVENT_TITLE"];
-            [dictionary setObject:e.eventDescription forKey:@"EVENT_DESCRIPTION"];
-            [dictionary setObject:[NSString stringWithFormat:@"%@", e.eventDate] forKey:@"EVENT_DATE"];
-            
-            [eventsToSave addObject:dictionary];
-        }
-        
-        if (eventsToSave != nil) {
-            // Save the user defaults.
-            NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
-            [standardDefaults setObject:eventsToSave forKey:kSavedEventsKey];
-            [standardDefaults synchronize];
-        }
         
         // Title
         UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, kEventElementPadding, cell.frame.size.width, 20)];
@@ -176,6 +160,25 @@
         } completion:^(BOOL finished){
             okToMoveSlideBar = NO;
         }];
+    }
+}
+
+-(IBAction)saveEvents:(id)sender {
+    NSMutableArray *eventsToSave = [[NSMutableArray alloc] initWithCapacity:[EventsManager sharedEventsManager].savedEvents.count + 1];
+    for (BaseEvent *e in [[EventsManager sharedEventsManager] savedEvents]) {
+        NSMutableDictionary *dictionary = [NSMutableDictionary new];
+        [dictionary setObject:e.eventTitle forKey:@"EVENT_TITLE"];
+        [dictionary setObject:e.eventDescription forKey:@"EVENT_DESCRIPTION"];
+        [dictionary setObject:[NSString stringWithFormat:@"%@", e.eventDate] forKey:@"EVENT_DATE"];
+        
+        [eventsToSave addObject:dictionary];
+    }
+    
+    if (eventsToSave != nil) {
+        // Save the user defaults.
+        NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
+        [standardDefaults setObject:eventsToSave forKey:kSavedEventsKey];
+        [standardDefaults synchronize];
     }
 }
 
